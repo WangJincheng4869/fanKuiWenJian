@@ -11,6 +11,8 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "@logicflow/core": "^2.0.1",
+    "@logicflow/extension": "^2.0.1",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },

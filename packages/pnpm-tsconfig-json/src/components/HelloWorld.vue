@@ -1,7 +1,18 @@
 <script setup lang="ts">
+import LogicFlow from '@logicflow/core';
+
 defineProps<{
   msg: string
 }>()
+
+new LogicFlow({
+  container: document.querySelector('.greetings') as HTMLDivElement,
+  width: 700,
+  height: 500,
+  background: {
+    color: '#F0F0F0'
+  }
+});
 </script>
 
 <template>
