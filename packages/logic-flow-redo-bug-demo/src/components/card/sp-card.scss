@@ -1,0 +1,76 @@
+.sp-card {
+  width: 100%;
+  height: 100%;
+  background-color: var(--sp-bg-color-overlay);
+  border-radius: 8px;
+  padding: 20px 14px;
+
+  --sp-card-header-pb: 8px;
+
+  .sp-card__header {
+    width: 100%;
+    border-bottom: 4px solid var(--el-border-color-light);
+    padding-bottom: var(--sp-card-header-pb);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+
+    .sp-card-title {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--sp-title-color);
+      font-weight: bold;
+    }
+  }
+
+  // 显示标题下划线时的样式
+  &.title-underline {
+    padding: 20px;
+    .sp-card__header {
+      .sp-card-title {
+        padding: 0 14px;
+        min-width: 100px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          border-bottom: 4px solid #499daa;
+          top: calc(100% + var(--sp-card-header-pb));
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .sp-card__body {
+    width: 100%;
+  }
+
+  // 清除 body padding
+  &.clear-body-padding {
+    padding-bottom: 0;
+
+    .sp-card__body {
+      margin: 0 -14px;
+      width: calc(100% + 28px);
+    }
+
+    // 清除 body padding 并 显示标题下划线
+    &.title-underline {
+      padding: 20px;
+      .sp-card__body {
+        margin: 0 -20px;
+        width: calc(100% + 40px);
+      }
+    }
+  }
+
+  // 卡片内的表格背景色与卡片背景色相同
+  .el-table {
+    --el-table-tr-bg-color: var(--sp-bg-color-overlay);
+  }
+}

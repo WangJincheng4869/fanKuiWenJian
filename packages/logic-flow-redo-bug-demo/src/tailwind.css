@@ -1,0 +1,3 @@
+/* tailwind专用css文件，不引用基础样式是因为基础样式会改写基础元素的样式，影响布局 */
+@tailwind components;
+@tailwind utilities;
