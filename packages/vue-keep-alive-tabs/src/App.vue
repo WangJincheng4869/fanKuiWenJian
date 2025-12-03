@@ -37,10 +37,12 @@ const getNext = (key: string) => {
 };
 
 const closeHandler = (key: string) => {
+  // 替换 include 数组会导致重新渲染，直接删除可以拿到 NAP 中存储的组件并返回，这是目前的最优解
   deleteInclude(key);
   // push(getNext(key)!);
   // wrapComponentMap.delete(key);
   push(getNext(key)!).then(() => {
+    // 最好在界面跳走之后再删除 map 中的缓存，防止重新渲染时又创建新的 wrap 组件
     wrapComponentMap.delete(key);
   });
   // setTimeout(() => {
